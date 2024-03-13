@@ -1,9 +1,4 @@
 
-let noOfWords= wordList.length
-let noOfPhrases= phraseList.length
-let score=0
-
-
 
 function choosePhrasesOrWords(){
   let choice = prompt("Which list do you like to play:'words' or 'phrases' ?")
@@ -14,37 +9,37 @@ function choosePhrasesOrWords(){
 }
 
 
-
-
-
-if(userChoice === "words"){
-    for(let i=0; i<=wordList.length; i++) {
-        let userWord = prompt("Enter a word:" + wordList[i])
-         if(wordList[i] === userWord) {
-           score ++;
-        }
-        }
-        console.log("Your score is" + score + "on" + wordList.length)
-} else{
-    for(let i=0; i<=phraseList.length; i++) {
-        let userWord = prompt("Enter a word:" + phraseList[i])
-         if(phraseList[i] === userWord) {
-           score ++;
-        }
-        }
-        console.log("Your score is" + score + "on" + phraseList.length)
+function launchGameLoop(proposedList){
+  let score=0
+  for(let i= 0; i< proposedList.length; i++){
+    let userWord = prompt("Enter the word:" + proposedList[i])
+    if(userWord === proposedList[i]){
+      score++
+    }
+  }
+return score;
 }
+
 
 
 function displayResult(score, proposedWords){
-  return "your score is" + score + "on"+  proposedWords ;
+  console.log("your score is"+" "+score+" "+"on"+" "+proposedWords );
 }
+
 
  
-function launchGameLoop(){
-
-}
 
 function launchGame(){
 let choice = choosePhrasesOrWords()
+let score = 0
+let proposedWords= 0
+
+if(choice==="words"){
+  score = launchGameLoop(wordList)
+  proposedWords = wordList.length
+}else{
+  score =launchGameLoop(phraseList)
+  proposedWords = phraseList.length
+}
+displayResult(score, proposedWords);
 }

@@ -4,11 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="scripts/config.js"></script>
-    <script src="scripts/script.js"></script>
-    <script src="scripts/main.js"></script>
+    <script src="scripts/config.js" defer></script>
+    <script src="scripts/script.js" defer></script>
+    <script src="scripts/main.js" defer></script>
 </head>
 <body>
     
+    <header>
+        <h1>Qwertype</h1>
+        <h2>Application to write fast</h2>
+        <h3>Qwertype is an online application that makes you learn type fast in the keyboard </h3>
+       </header>
+       <main>
+        <div class="chooseOption">
+            <p>Choose your option and type the suggestion that appears in the field below.</p>
+            <div class="sourceOption">
+                <input type="radio" name="sourceOption" id="words" value="1" checked >
+                <labe for="words">Words</label>
+                    <input type="radio" name="sourceOption" id="phrases" value="2" >
+                <labe for="phrases">Phrases</label>
+            </div>
+
+        <div class="proposedZone">
+        Qwertype
+        </div>
+
+            <div class="zoneInput">
+                <input type="text" id="writeInput" name="writeInput">
+                <button id="btnWordValid">Validate</button>
+
+            </div>
+
+            <div class="scoreZone">
+                Your score:<span>0</span>
+            </div>
+
+            <footer>
+                @copyright:Rpk powered by OCR
+            </footer>
+
+
+        </div>
+       </main>
 </body>
 </html>
