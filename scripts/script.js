@@ -23,7 +23,9 @@ return score;
 
 
 function displayResult(score, proposedWords){
-  console.log("your score is"+" "+score+" "+"on"+" "+proposedWords );
+  let scoreZone = document.querySelector(".scoreZone span")
+  let displayScore = `${score} / ${proposedWords}`
+  scoreZone.textContent = displayScore; //.innerText can also be used instead of textContent
 }
 
 
